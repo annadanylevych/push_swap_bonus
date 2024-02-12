@@ -41,9 +41,11 @@ int	ft_stacksize(t_stack *stack)
 
 void	break_free(t_stack *stack)
 {
+	t_stack	*tmp;
 	while (stack != NULL)
 	{
+		tmp = stack;
 		free(stack);
-		stack = stack->next;
+		stack = tmp->next;
 	}
 }
